@@ -1,0 +1,27 @@
+{
+  "name": "node-cors-demo",
+  "version": "1.0.0",
+  "description": "cors study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greatjiang/node-cors-demo.git"
+  },
+  "keywords": [
+    "node",
+    "cors"
+  ],
+  "author": "greatjiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greatjiang/node-cors-demo/issues"
+  },
+  "homepage": "https://github.com/greatjiang/node-cors-demo#readme",
+  "dependencies": {
+    "bestip": "^1.0.2",
+    "express": "^4.16.3"
+  }
+}
