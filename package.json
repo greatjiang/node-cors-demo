@@ -22,6 +22,7 @@
   "homepage": "https://github.com/greatjiang/node-cors-demo#readme",
   "dependencies": {
     "bestip": "^1.0.2",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mysql": "^2.16.0"
   }
 }

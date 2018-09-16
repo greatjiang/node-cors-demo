@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+// const connection = require('./data')
 
 app.all('*', (req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
@@ -12,13 +13,16 @@ app.all('*', (req, res, next) => {
 
 const result = {
   code: 1,
-  data: [{
-    name: ' greatjiang',
-    sex: 'male'
-  },{
-    name: 'nobody',
-    sex: 'unknow'
-  }]
+  data:[
+    {
+      name: 'greatjiang',
+      height: '177cm'
+    },
+    {
+      name: 'luca',
+      height: '50cm'
+    }
+  ]
 }
 
 app.get('/getData', (req, res) => {
@@ -27,5 +31,5 @@ app.get('/getData', (req, res) => {
 })
 
 const server = app.listen(3000, () => {
-  console.log(result)
+  console.log('[info]---API start')
 })
