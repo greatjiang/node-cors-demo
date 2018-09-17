@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-// const connection = require('./data')
+const connection = require('./data')
 
 app.all('*', (req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
@@ -11,23 +11,19 @@ app.all('*', (req, res, next) => {
   next()
 })
 
-const result = {
-  code: 1,
-  data:[
-    {
-      name: 'greatjiang',
-      height: '177cm'
-    },
-    {
-      name: 'luca',
-      height: '50cm'
+app.get('/getData', (req, res, next) => {
+  const sql = "select * from usermes"
+  connection.query(sql,(err,result) => {
+    if(err) {
+      console.log('[SELECT ERROR] - ', err.message)
+      return false
     }
-  ]
-}
-
-app.get('/getData', (req, res) => {
-  res.status(200)
-  res.json(result)
+    console.log('result',result)
+    res.status(200)
+    res.json(result)
+  })
+  console.log('connection end')
+  // connection.end()
 })
 
 const server = app.listen(3000, () => {
