@@ -45,32 +45,32 @@
 ## node MySQL 驱动配置
 > npm i mysql  
 
-  const mysql = require('mysql')
+    const mysql = require('mysql')
 
-  const connection =  mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    port: '3306',
-    database: 'system-jiang'
-  })
-  connection.connect()
+    const connection =  mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: 'root',
+      port: '3306',
+      database: 'system-jiang'
+    })
+    connection.connect()
 
-  module.exports = connection
+    module.exports = connection
 
 ## 接口编写
     app.get('/getData', (req, res, next) => {
-    const sql = "select * from usermes"
-    connection.query(sql,(err,result) => {
-      if(err) {
-        console.log('[SELECT ERROR] - ', err.message)
-        return false
-      }
-      console.log('result',result)
-      res.status(200)
-      res.json(result)
+      const sql = "select * from usermes"
+      connection.query(sql,(err,result) => {
+        if(err) {
+          console.log('[SELECT ERROR] - ', err.message)
+          return false
+        }
+        console.log('result',result)
+        res.status(200)
+        res.json(result)
+      })
+      console.log('connection end')
+      // connection.end()
     })
-    console.log('connection end')
-    // connection.end()
-  })
 
